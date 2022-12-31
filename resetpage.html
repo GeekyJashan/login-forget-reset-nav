@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Reset Password</title>
+  <style>
+    /* Add some styling for the page */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background:url(dd1.jpg);
+    
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+     
+    }
+    .container {
+      max-width: 400px;
+      height:400px;
+    
+      text-align: center;
+      border-width: 1px;
+      
+      
+
+padding:2rem;
+
+display:flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+
+box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+border-radius: 14 px;
+background: white ;
+    }
+    .old{
+        display: flex;
+        flex-direction: column;
+     
+        width:700 px;
+    }
+    .new{
+        display: flex;
+        flex-direction: column;
+    
+        width:700 px;
+    }
+    h1 {
+      margin: 0 0 20px 0;
+      font-size: 32px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    input {
+      width: 100%;
+      padding: 12px 20px;
+      margin:1px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    .password{
+        display:flex;
+        flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Reset Password</h1>
+    <form id="reset-form"><div class="password">
+     <div class="old"> <label for="old-password">Old Password:</label><br>
+      <input type="password" id="old-password" name="old-password"
+      autofocus placeholder="Old Password"><br></div>
+      <div class="new"><label for="new-password">New Password:</label><br>
+      <input type="password" id="new-password" name="new-password" autofocus placeholder="New Password"><br></div>
+      <button type="submit">Reset Password</button>
+    </div>
+      <div class="error" id="error-message"></div>
+    </form>
+  </div>
+  <script>
+    // Add a submit event listener to the form
+    const form = document.getElementById('reset-form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      // Get the old password and new password values
+      const oldPassword = document.getElementById('old-password').value;
+      const newPassword = document.getElementById('new-password').value;
+      
+      // Validate the passwords (assuming there is a validatePassword function)
+      const isValid = validatePassword(oldPassword, newPassword);
+      
+      // If the passwords are valid, send a request to the server to reset the password
+      if (isValid) {
+        sendResetPasswordRequest(oldPassword, newPassword);
+      } else {
+        // Show an error message if the passwords are invalid
+        const errorMessage = document.getElementById('error')}})
+        </script>
+        </body>
